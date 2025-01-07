@@ -94,5 +94,10 @@ $(function(){
         innerWidth: 640, // ポップアップの幅
         innerHeight: 359 // ポップアップの高さ
     });
+
+    $(window).on("resize", function() {
+        var windowHeight = $(window).height(); // ウィンドウの高さを取得
+        $(".goods-section").css("min-height", windowHeight + "px");
+    }).trigger("resize");
     
 });

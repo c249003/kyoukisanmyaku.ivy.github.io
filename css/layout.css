@@ -2,6 +2,8 @@ body {
     font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
 }
 
+
+
 /* グローバルナビ */
 #wrapper nav {
     position: fixed;
@@ -81,7 +83,7 @@ body {
     transform: translate(-7px, -17px) rotate(-45deg)
 }
 
-/*スライダー*/
+/* スライダー全体のスタイル */
 #wrapper .slider {
     position: relative;
     width: 640px;
@@ -89,14 +91,18 @@ body {
     padding: 0 20px;
 }
 
+/* スライダー内部 */
 #wrapper .slider .slider-inner {
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    height: 480px
+    height: 480px;
+    z-index: 2; /* 他の要素より前面に表示 */
+    overflow: hidden; /* 不要なスクロールを防止 */
 }
 
+/* スライダー各スライド */
 #wrapper .slider .slider-inner li {
     position: absolute;
     top: 0;
@@ -104,32 +110,40 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
+    z-index: 1; /* 他の要素と重ならないよう設定 */
     -webkit-transition: all 600ms;
     transition: all 600ms;
-    pointer-events: none
+    pointer-events: none; /* 非表示時にクリックできないように */
 }
 
+/* 表示中のスライド */
 #wrapper .slider .slider-inner li.show {
     opacity: 1;
-    z-index: 1;
-    pointer-events: auto
+    z-index: 3; /* 最前面に表示 */
+    pointer-events: auto; /* クリック可能に */
 }
 
+/* スライダー内の画像 */
 #wrapper .slider .slider-inner li img {
     width: 100%;
-    height: auto
+    height: auto;
+    object-fit: cover; /* 画像を親要素内に収める */
 }
 
+/* ナビゲーション部分 */
 #wrapper .slider .nav {
+    position: relative; /* 配置を調整 */
+    z-index: 3; /* 他の要素より前面に表示 */
     width: 100%;
     text-align: center;
     font-size: 0;
-    background: #000
+    background: #000; /* 背景色 */
 }
 
+/* ナビゲーションの各要素 */
 #wrapper .slider .nav li {
     display: inline-block;
-    width: 25%;
+    width: 25%; /* スライド数に応じて調整 */
     height: 100px;
     background: #ddd;
     cursor: pointer;
@@ -138,16 +152,16 @@ body {
     box-sizing: border-box;
     -webkit-transition: opacity 400ms;
     transition: opacity 400ms;
-    opacity: .5;
-    
+    opacity: 0.5; /* 初期状態で少し透明 */
 }
 
+/* ナビゲーションのホバー時と選択時 */
 #wrapper .slider .nav li:hover,
 #wrapper .slider .nav li.current {
-    opacity: 1;
-    
+    opacity: 1; /* 不透明にする */
 }
 
+/* 前後ボタン */
 #wrapper .slider .arrow {
     position: absolute;
     top: 50%;
@@ -165,26 +179,28 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 4; /* ボタンがすべての要素より前面に表示されるように */
 }
 
+/* ボタンホバー時の半透明効果 */
 #wrapper .slider .arrow:hover {
-    opacity: .7;
-    
+    opacity: 0.7;
 }
 
+/* 左矢印ボタン */
 #wrapper .slider .arrow#arrow-prev {
     left: 0 !important;
     -webkit-transform: translate(-100%, -50%) !important;
-    transform: translate(-100%, -50%) !important
+    transform: translate(-100%, -50%) !important;
 }
 
+/* 右矢印ボタン */
 #wrapper .slider .arrow#arrow-next {
     left: auto !important;
     right: 0 !important;
     -webkit-transform: translate(100%, -50%) !important;
-    transform: translate(100%, -50%) !important
+    transform: translate(100%, -50%) !important;
 }
-
 
 
 
@@ -326,6 +342,10 @@ body {
     margin-top: 20px; /* 上部余白を追加して調整 */
 }
 
+.section03-images {
+    position: relative; /* 必要に応じて追加 */
+    z-index: 10; /* 表示画像のz-indexより高く設定 */
+}
 
 
 /* グッズセクションの背景スタイル */
@@ -334,12 +354,19 @@ body {
     background-size: cover; /* 背景をセクション全体にフィット */
     background-position: center; /* 背景画像を中央揃え */
     background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    padding-bottom: 50px;
     width: 100%; /* セクション幅を画面いっぱいに */
-    height: 100vh; /* セクション高さを画面いっぱいに */
+    
     margin: 0; /* 余白を削除 */
     padding: 0; /* パディングを削除 */
     color: #ddd;
-    overflow: hidden; /* 余計なスクロールを防ぐ */
+    
+}
+
+.goods-section {
+    height: auto; /* コンテンツに応じて高さを自動調整 */
+    min-height: 100%; /* 必要に応じて最小高さを設定 */
+    overflow: visible; /* コンテンツが見切れないようにする */
 }
 
 /* セクション全体のスタイル */
@@ -481,3 +508,5 @@ body {
     border-radius: 8px; /* 角丸 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 見栄えのため影を追加 */
 }
+
+
