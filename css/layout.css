@@ -1,0 +1,483 @@
+body {
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+}
+
+/* グローバルナビ */
+#wrapper nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    padding-top: 50px;
+    background: rgba(33, 33, 33, .9);
+    font-size: 16px;
+    box-sizing: border-box;
+    z-index: 2
+}
+
+#wrapper nav ul li {
+    padding: 20px 28px
+}
+
+#wrapper nav ul li a {
+    text-decoration: none;
+    color: #ddd
+}
+
+#wrapper .btn-gnavi {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 24px;
+    z-index: 3;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-transition: all 400ms;
+    transition: all 400ms
+}
+
+#wrapper .btn-gnavi span {
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 10px;
+    -webkit-transition: all 400ms;
+    transition: all 400ms
+}
+
+#wrapper .btn-gnavi span:nth-child(1) {
+    top: 0
+}
+
+#wrapper .btn-gnavi span:nth-child(2) {
+    top: 10px
+}
+
+#wrapper .btn-gnavi span:nth-child(3) {
+    top: 20px
+}
+
+#wrapper .btn-gnavi.open {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+#wrapper .btn-gnavi.open span {
+    background: #fff
+}
+
+#wrapper .btn-gnavi.open span:nth-child(1) {
+    width: 24px;
+    -webkit-transform: translate(-7px, 17px) rotate(45deg);
+    transform: translate(-7px, 17px) rotate(45deg)
+}
+
+#wrapper .btn-gnavi.open span:nth-child(3) {
+    width: 24px;
+    -webkit-transform: translate(-7px, -17px) rotate(-45deg);
+    transform: translate(-7px, -17px) rotate(-45deg)
+}
+
+/*スライダー*/
+#wrapper .slider {
+    position: relative;
+    width: 640px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+}
+
+#wrapper .slider .slider-inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 480px
+}
+
+#wrapper .slider .slider-inner li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+    pointer-events: none
+}
+
+#wrapper .slider .slider-inner li.show {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto
+}
+
+#wrapper .slider .slider-inner li img {
+    width: 100%;
+    height: auto
+}
+
+#wrapper .slider .nav {
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+    background: #000
+}
+
+#wrapper .slider .nav li {
+    display: inline-block;
+    width: 25%;
+    height: 100px;
+    background: #ddd;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    -webkit-transition: opacity 400ms;
+    transition: opacity 400ms;
+    opacity: .5;
+    
+}
+
+#wrapper .slider .nav li:hover,
+#wrapper .slider .nav li.current {
+    opacity: 1;
+    
+}
+
+#wrapper .slider .arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    background: #000;
+    color: #fff;
+    line-height: 40px;
+    padding: 5px;
+    -webkit-transition: opacity 400ms;
+    transition: opacity 400ms;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#wrapper .slider .arrow:hover {
+    opacity: .7;
+    
+}
+
+#wrapper .slider .arrow#arrow-prev {
+    left: 0 !important;
+    -webkit-transform: translate(-100%, -50%) !important;
+    transform: translate(-100%, -50%) !important
+}
+
+#wrapper .slider .arrow#arrow-next {
+    left: auto !important;
+    right: 0 !important;
+    -webkit-transform: translate(100%, -50%) !important;
+    transform: translate(100%, -50%) !important
+}
+
+
+
+
+/*コンテンツエリア*/
+#wrapper .contents section {
+    position: relative;
+    width: 100%;
+    padding-bottom: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-attachment: fixed
+}
+
+/*見出しのフォントのサイズ*/
+#wrapper .contents section h2 {
+    font-size: 60px;
+    margin-bottom: 60px;
+}
+
+#section01 {
+    /* セクション全体のスタイル */
+    background-image: url('images/img00.jpg'); /* 背景画像のパス */
+    background-size: cover; /* 背景をセクション全体にフィット */
+    background-position: center; /* 背景画像を中央揃え */
+    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    background-color: #f3f4f6; /* 背景色を淡いグレーに設定 */
+    width: 100%; /* セクション幅を画面いっぱいに */
+    height: 100vh; /* セクション高さを画面いっぱいに */
+    margin: 0; /* 余白を削除 */
+    padding: 20px; /* セクション内の余白 */
+    color: #ddd; /* テキストカラー */
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: center; /* 横方向中央揃え */
+    align-items: center; /* 縦方向中央揃え */
+    text-align: center; /* テキストを中央揃え */
+    box-sizing: border-box; /* パディングを含めてサイズ計算 */
+    overflow: hidden; /* 余計なスクロールを防ぐ */
+}
+
+#section01 .section-inner {
+    /* セクション内コンテンツのスタイル */
+    max-width: 800px; /* 最大幅を設定 */
+    background-color: transparent; /* 背景色を透明に */
+    padding: 30px; /* コンテンツ内の余白 */
+    border-radius: 8px; /* 角を丸める */
+    text-align: center; /* テキストを中央揃え */
+}
+
+#section01 h2 {
+    /* セクションタイトルのスタイル */
+    font-size: 2.5rem; /* フォントサイズ */
+    margin-bottom: 20px; /* 下部の余白 */
+    color: #ffffff; /* テキストカラー */
+}
+
+#section01 .description h3 {
+    /* サブタイトルのスタイル */
+    font-size: 1.8rem; /* フォントサイズ */
+    margin-bottom: 15px; /* 下部の余白 */
+    color: #ffe6e6; /* テキストカラー */
+}
+
+#section01 .description p {
+    /* 説明文のスタイル */
+    font-size: 1rem; /* フォントサイズ */
+    line-height: 1.8; /* 行間の設定 */
+    color: #f7e4e4; /* テキストカラー */
+}
+
+/*見出し高さ調整*/
+#wrapper .contents section#section01 .section-inner {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%)
+}
+
+
+#section02 {
+    /* セクション全体のスタイル */
+    background-image: url('images/img00a.jpg'); /* 背景画像のパス */
+    background-size: cover; /* 背景をセクション全体にフィット */
+    background-position: center; /* 背景画像を中央揃え */
+    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    width: 100%; /* セクション幅を画面いっぱいに */
+    height: 100vh; /* セクション高さを画面いっぱいに */
+    margin: 0; /* 余白を削除 */
+    padding: 0; /* パディングを削除 */
+    color: #ddd; /* デフォルトのテキストカラー */
+    overflow: hidden; /* 余計なスクロールを防ぐ */
+}
+
+#section02 .section-inner {
+    /* セクション内のコンテンツスタイル */
+    position: absolute; /* 親要素を基準に配置 */
+    top: 50%; /* 縦方向の中央揃え */
+    left: 50%; /* 横方向の中央揃え */
+    transform: translate(-50%, -50%); /* 完全な中央揃え */
+    text-align: center; /* テキストを中央揃え */
+    color: #ffffff; /* テキストカラーを白に設定 */
+    font-size: 1.5rem; /* 適切なフォントサイズ */
+    line-height: 1.8; /* 行間を調整 */
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明の背景色 */
+    padding: 20px; /* コンテンツ内の余白 */
+    border-radius: 10px; /* 角を丸くする */
+}
+
+
+#section03 {
+    /* セクション全体のスタイル */
+    background-image: url('images/img00b.png'); /* 背景画像のパス */
+    background-size: cover; /* 背景をセクション全体にフィット */
+    background-position: center; /* 背景画像を中央揃え */
+    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    width: 100%; /* セクション幅を画面いっぱいに */
+    height: 100vh; /* セクション高さを画面いっぱいに */
+    margin: 0; /* 余白を削除 */
+    padding: 0; /* パディングを削除 */
+    color: #ddd; /* デフォルトのテキストカラー */
+    overflow: hidden; /* 余計なスクロールを防ぐ */
+}
+
+#section03 .section-inner {
+    /* セクション内のコンテンツスタイル */
+    position: absolute; /* 親要素を基準に配置 */
+    top: 45%; /* セクション内で上下位置を少し下に移動 */
+    left: 50%; /* 横方向を中央に配置 */
+    transform: translate(-50%, -50%); /* 完全な中央揃え */
+    text-align: center; /* テキストを中央揃え */
+    color: rgb(253, 242, 242); /* テキストカラーを柔らかい白に設定 */
+    font-size: 1.5rem; /* 適切なフォントサイズ */
+    line-height: 1.8; /* 行間を調整 */
+    padding: 20px 40px; /* コンテンツ内の余白を設定 */
+    border-radius: 10px; /* 角を丸くする */
+    max-width: 80%; /* コンテンツの最大幅を制限 */
+    box-sizing: border-box; /* パディングを含めたサイズ計算 */
+    margin-top: 20px; /* 上部余白を追加して調整 */
+}
+
+
+
+/* グッズセクションの背景スタイル */
+#goods-section {
+    background-image: url('images/imgsi.png'); /* 背景画像のパス */
+    background-size: cover; /* 背景をセクション全体にフィット */
+    background-position: center; /* 背景画像を中央揃え */
+    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    width: 100%; /* セクション幅を画面いっぱいに */
+    height: 100vh; /* セクション高さを画面いっぱいに */
+    margin: 0; /* 余白を削除 */
+    padding: 0; /* パディングを削除 */
+    color: #ddd;
+    overflow: hidden; /* 余計なスクロールを防ぐ */
+}
+
+/* セクション全体のスタイル */
+#goods-section {
+    padding: 50px 15px;
+    background-color: #f8f9fa; /* 背景色 */
+}
+
+#goods-section .section-inner {
+    max-width: 1200px; /* セクションの最大幅 */
+    margin: 0 auto; /* セクションを中央揃え */
+}
+
+/* 見出しのスタイル */
+#goods-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+/* グリッドレイアウト */
+.goods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自動調整のグリッド */
+    gap: 20px; /* 各カード間のスペース */
+    margin: 0 auto; /* グリッド全体を中央揃え */
+}
+
+/* グッズカードのスタイル */
+.goods-card {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    overflow: hidden; /* セクションからはみ出さないようにする */
+}
+
+.goods-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 画像の親要素 */
+.goods-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 正方形を維持 */
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #f0f0f0; /* 背景色（画像がない場合） */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 画像のスタイル */
+.goods-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像を枠内でカバー */
+}
+
+.goods-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    color: #000000;
+}
+
+.goods-card button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.goods-card button:hover {
+    background-color: #555;
+}
+
+/* セクション05の背景スタイル */
+#section05 {
+    background-image: url('images/imgm.jpg'); /* 背景画像のパス */
+    background-size: cover; /* 背景をセクション全体にフィット */
+    background-position: center; /* 背景画像を中央揃え */
+    background-repeat: no-repeat; /* 背景画像を繰り返さない */
+    width: 100%; /* セクション幅を画面いっぱいに */
+    height: 100vh; /* セクション高さを画面いっぱいに */
+    margin: 0; /* 余白を削除 */
+    padding: 30px; /* パディングを調整 */
+    color: #ddd;
+    overflow: hidden; /* 余計なスクロールを防ぐ */
+    text-align: center;
+    background-color: #f4f4f4; /* 背景色を淡いグレーに設定 */
+}
+
+/* セクションの内部スタイル */
+#section05 .section-inner {
+    max-width: 800px; /* セクションの最大幅 */
+    margin: 0 auto; /* セクションを中央揃え */
+}
+
+/* 見出しのスタイル */
+#section05 h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #61fc08; /* 明るい緑の文字色 */
+}
+
+/* 映画説明のスタイル */
+#section05 .movie-description {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ffffff;
+    text-align: left;
+}
+
+#section05 .movie-description p {
+    margin-bottom: 15px;
+}
+
+/* YouTubeコンテナのスタイル */
+#section05 .youtube-container {
+    margin: 20px auto;
+    max-width: 1000px; /* YouTubeコンテナの最大幅 */
+    text-align: center;
+}
+
+#section05 iframe {
+    width: 100%; /* 横幅をコンテナに合わせる */
+    max-width: 1000px; /* 最大幅 */
+    aspect-ratio: 16 / 9; /* 縦横比を維持 */
+    height: auto; /* 高さを自動で調整 */
+    border-radius: 8px; /* 角丸 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 見栄えのため影を追加 */
+}

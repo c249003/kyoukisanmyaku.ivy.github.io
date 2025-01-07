@@ -1,0 +1,37 @@
+@charset "utf-8"; /* 文字コードをUTF-8に設定 */
+
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+/* すべての要素のデフォルトスタイルをリセット */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0; /* 余白をすべて削除 */
+    padding: 0; /* パディングをすべて削除 */
+    border: 0; /* ボーダーをすべて削除 */
+    outline: 0; /* フォーカス時のアウトラインを削除 */
+    font-size: 100%; /* フォントサイズをデフォルトにリセット */
+    vertical-align: baseline; /* インライン要素の垂直整列をベースラインに統一 */
+    background: transparent; /* 背景を透明にリセット */
+}
+
+/* ナビゲーションリストのスタイルをリセット */
+nav ul {
+    list-style: none; /* リストマーカー（ディスクや番号）を非表示にする */
+}
+
